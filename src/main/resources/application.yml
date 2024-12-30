@@ -1,15 +1,11 @@
 spring:
   profiles:
-    active: client  # 默认使用客户端配置
+    active: client
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:password}
-
-server:
-  port: ${SERVER_PORT:8088}
-  address: ${SERVER_ADDRESS:0.0.0.0}
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

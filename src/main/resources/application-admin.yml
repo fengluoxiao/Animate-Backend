@@ -1,3 +1,6 @@
 server:
-  port: 8088
-  address: 0.0.0.0 
+  port: ${ADMIN_SERVER_PORT:8088}
+  address: ${ADMIN_SERVER_ADDRESS:0.0.0.0}
+
+spring:
+  profiles: admin 

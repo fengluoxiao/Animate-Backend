@@ -1,3 +1,6 @@
 server:
-  port: 8086
-  address: 0.0.0.0 
+  port: ${CLIENT_SERVER_PORT:8086}
+  address: ${CLIENT_SERVER_ADDRESS:0.0.0.0}
+
+spring:
+  profiles: client
