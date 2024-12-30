@@ -1,0 +1,4 @@
+Method,URL,Request Headers,Request Body,Response,Description
+POST,/api/admin/login,,{"username": "admin","password": "admin123"},{"ok": true,"data": "JWT_TOKEN","message": "success"},"管理员登录"
+POST,/api/admin/register,Authorization: Bearer JWT_TOKEN,{"username": "newadmin","password": "newadmin123"},{"ok": true,"data": "Admin created successfully","message": "success"},"创建新管理员"
+GET,/api/admin/dashboard,Authorization: Bearer JWT_TOKEN,,{"ok": true,"data": {"totalUsers": 100,"totalOrders": 50,"revenue": 10000},"message": "success"},"获取仪表盘数据" 

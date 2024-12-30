@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: client  # 默认使用客户端配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:password}
+
+server:
+  port: ${SERVER_PORT:8088}
+  address: ${SERVER_ADDRESS:0.0.0.0}
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases:
+    - alias: NameTest
+      type: com.fengluoxiao.animateBackend.model.NameTest
+    - alias: Admin
+      type: com.fengluoxiao.animateAdminBackend.model.Admin
+  configuration:
+    map-underscore-to-camel-case: true 
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    com.fengluoxiao: ${LOG_LEVEL:DEBUG}
+    org.springframework.web: ${LOG_LEVEL:DEBUG}
+
+jwt:
+  secret: ${JWT_SECRET:defaultSecretKey}
+  expiration: ${JWT_EXPIRATION:86400000} 

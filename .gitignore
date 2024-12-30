@@ -1,0 +1,22 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Build files
+target/
+build/
+out/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fengluoxiao.animateBackend.dao.NameTestMapper">
+    
+    <resultMap id="BaseResultMap" type="com.fengluoxiao.animateBackend.model.NameTest">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="desc" property="desc" />
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+        id, name, `desc`
+    </sql>
+    
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM nameTest
+    </select>
+    
+    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM nameTest
+        WHERE id = #{id}
+    </select>
+    
+    <insert id="insert" parameterType="com.fengluoxiao.animateBackend.model.NameTest"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO nameTest (name, `desc`)
+        VALUES (#{name}, #{desc})
+    </insert>
+    
+    <update id="update" parameterType="com.fengluoxiao.animateBackend.model.NameTest">
+        UPDATE nameTest
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="desc != null">
+                `desc` = #{desc},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM nameTest WHERE id = #{id}
+    </delete>
+</mapper> 
