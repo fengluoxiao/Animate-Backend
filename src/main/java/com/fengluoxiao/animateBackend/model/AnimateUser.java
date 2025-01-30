@@ -1,8 +1,9 @@
 package com.fengluoxiao.animateBackend.model;
 
-public class NameTest {
+public class AnimateUser {
     private Integer id;
-    private String name;
+    private String username;
+    private String password;
     private String desc;
     
     // Getters and Setters
@@ -15,11 +16,19 @@ public class NameTest {
     }
     
     public String getName() {
-        return name;
+        return username;
     }
     
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setId(String password) {
+        this.password = password;
     }
     
     public String getDesc() {

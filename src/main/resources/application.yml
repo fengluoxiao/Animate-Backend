@@ -3,15 +3,15 @@ spring:
     active: client
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    url: jdbc:mysql://${DB_HOST:38.244.6.36}:${DB_PORT:5800}/${DB_NAME:AnimateDB}?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:password}
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases:
-    - alias: NameTest
-      type: com.fengluoxiao.animateBackend.model.NameTest
+    - alias: AnimateUser
+      type: com.fengluoxiao.animateBackend.model.AnimateUser
     - alias: Admin
       type: com.fengluoxiao.animateAdminBackend.model.Admin
   configuration:

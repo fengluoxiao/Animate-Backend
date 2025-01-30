@@ -9,16 +9,16 @@
     </resultMap>
     
     <select id="findByUsername" resultMap="AdminMap">
-        SELECT * FROM adminTable WHERE username = #{username}
+        SELECT * FROM animateAdmin WHERE username = #{username}
     </select>
     
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO adminTable (username, password)
+        INSERT INTO animateAdmin (username, password)
         VALUES (#{username}, #{password})
     </insert>
     
     <update id="update">
-        UPDATE adminTable
+        UPDATE animateAdmin
         <set>
             <if test="username != null">username = #{username},</if>
             <if test="password != null">password = #{password},</if>
@@ -27,10 +27,10 @@
     </update>
     
     <delete id="deleteById">
-        DELETE FROM adminTable WHERE id = #{id}
+        DELETE FROM animateAdmin WHERE id = #{id}
     </delete>
     
     <select id="countAdmins" resultType="long">
-        SELECT COUNT(*) FROM adminTable
+        SELECT COUNT(*) FROM animateAdmin
     </select>
 </mapper> 

@@ -87,11 +87,34 @@
     </dependencies>
     
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>run-backend</id>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.fengluoxiao.animateBackend.AnimateBackendApplication</mainClass>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>run-admin-backend</id>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <mainClass>com.fengluoxiao.animateAdminBackend.AnimateAdminBackendApplication</mainClass>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+    
+    
 </project> 
