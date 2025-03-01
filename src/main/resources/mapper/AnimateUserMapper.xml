@@ -32,7 +32,7 @@
     </insert>
     
     <update id="update" parameterType="com.fengluoxiao.animateBackend.model.AnimateUser">
-        UPDATE annimateUser
+        UPDATE animateUser
         <set>
             <if test="username != null">
                 username = #{username},
@@ -45,6 +45,6 @@
     </update>
     
     <delete id="deleteById" parameterType="java.lang.Integer">
-        DELETE FROM annimateUser WHERE id = #{id}
+        DELETE FROM animateUser WHERE id = #{id}
     </delete>
 </mapper> 
